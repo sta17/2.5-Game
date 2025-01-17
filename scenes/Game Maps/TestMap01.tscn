@@ -1,0 +1,168 @@
+[gd_scene load_steps=25 format=3 uid="uid://cra4tdfc4m0ji"]
+
+[ext_resource type="PackedScene" uid="uid://l8u16sjn0fng" path="res://addons/inventory-system/ui/inventorySystemUI.tscn" id="1_fksfj"]
+[ext_resource type="Script" path="res://UI/CursorLooks.gd" id="2_v1lxi"]
+[ext_resource type="Texture2D" uid="uid://dl2gxi4oe1pa1" path="res://assets/images/Unity Assets/Cursors 64/Arrow.png" id="3_ava8f"]
+[ext_resource type="Texture2D" uid="uid://b5o1wo5fy83c3" path="res://assets/images/Unity Assets/Cursors 64/Arrow_Loot.png" id="4_x67ih"]
+[ext_resource type="Texture2D" uid="uid://di0shd5alx2k3" path="res://assets/images/Unity Assets/Cursors 64/Cursor_book.png" id="5_3gjvh"]
+[ext_resource type="Texture2D" uid="uid://bb03da4hq6dhv" path="res://assets/images/Unity Assets/Cursors 64/Cursor_Flask.png" id="6_0nbbh"]
+[ext_resource type="Texture2D" uid="uid://c7v1udkw0ludb" path="res://assets/images/Unity Assets/Cursors 64/Cursor_Settings.png" id="7_u06t1"]
+[ext_resource type="Texture2D" uid="uid://bew1w8r8d3430" path="res://assets/images/Unity Assets/Cursors 64/Arrow_Cross_Smaller.png" id="8_3kq22"]
+[ext_resource type="Texture2D" uid="uid://bror3hi0jnsi6" path="res://assets/images/Unity Assets/Cursors 64/Arrow_Compass.png" id="9_m5bbd"]
+[ext_resource type="PackedScene" uid="uid://bfe7dvbonnvpc" path="res://Objects/CameraAndCharacterSystem/CameraController.tscn" id="10_cj2bf"]
+[ext_resource type="PackedScene" uid="uid://bf5tp1dme0a5c" path="res://Objects/CameraAndCharacterSystem/PickUpItem.tscn" id="11_5lfsg"]
+[ext_resource type="LabelSettings" path="res://godot Style Elements/BlackAndWhite16px.tres" id="11_8q4n0"]
+[ext_resource type="Resource" uid="uid://cymey3vniyice" path="res://Objects/ItemHandling/Items/bottle.tres" id="12_qd5q6"]
+[ext_resource type="PackedScene" uid="uid://dml1wfehophg4" path="res://Objects/ItemHandling/Lootable/boxInventory.tscn" id="14_i5n2l"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/slot.gd" id="15_y5a8e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_87tdh"]
+sky_top_color = Color(0.659828, 0.71809, 0.799328, 1)
+sky_horizon_color = Color(0.73166, 0.837624, 0.772412, 1)
+ground_bottom_color = Color(0.266813, 0.632405, 0.290322, 1)
+ground_horizon_color = Color(0.73166, 0.837624, 0.772412, 1)
+
+[sub_resource type="Sky" id="Sky_5crnc"]
+sky_material = SubResource("ProceduralSkyMaterial_87tdh")
+
+[sub_resource type="Environment" id="Environment_y37cd"]
+background_mode = 2
+sky = SubResource("Sky_5crnc")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8i0a"]
+albedo_color = Color(0.576471, 0.356863, 0.109804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k4bbb"]
+material = SubResource("StandardMaterial3D_p8i0a")
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0d335"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhq3p"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1iw8"]
+size = Vector3(10, 1, 1)
+
+[sub_resource type="Resource" id="Resource_2no4a"]
+script = ExtResource("15_y5a8e")
+amount = 0
+max_stack = -1
+
+[node name="Map" type="Node3D"]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_y37cd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -1.25, 0)
+mesh = SubResource("BoxMesh_k4bbb")
+skeleton = NodePath("Ground")
+
+[node name="Ground" type="StaticBody3D" parent="Environment/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MeshInstance3D/Ground"]
+shape = SubResource("BoxShape3D_0d335")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79318, 0.451329, -5.27353)
+mesh = SubResource("BoxMesh_lhq3p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MeshInstance3D2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0098877, 0, 0)
+shape = SubResource("BoxShape3D_w1iw8")
+
+[node name="Player" parent="." instance=ExtResource("10_cj2bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.201791, 0)
+InventorySystemUI_path = NodePath("../UI/Inventory System UI")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Inventory System UI" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("1_fksfj")]
+player = NodePath("../../Player")
+
+[node name="Cursor Looks" type="Node" parent="UI"]
+script = ExtResource("2_v1lxi")
+default_cursor = ExtResource("3_ava8f")
+coin_cursor = ExtResource("4_x67ih")
+book_cursor = ExtResource("5_3gjvh")
+bottle_cursor = ExtResource("6_0nbbh")
+setting_cursor = ExtResource("7_u06t1")
+cross_cursor = ExtResource("8_3kq22")
+compass_cursor = ExtResource("9_m5bbd")
+
+[node name="InteractMessagePosition" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractMessage" type="Label" parent="UI/InteractMessagePosition"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "E - Open Loot"
+label_settings = ExtResource("11_8q4n0")
+vertical_alignment = 2
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="PickUpItem" parent="Collectibles" instance=ExtResource("11_5lfsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.315216, -4)
+item = ExtResource("12_qd5q6")
+amount = 1
+
+[node name="PickUpItem2" parent="Collectibles" instance=ExtResource("11_5lfsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.517785, 0.315216, -4)
+item = ExtResource("12_qd5q6")
+amount = 1
+
+[node name="PickUpItem3" parent="Collectibles" instance=ExtResource("11_5lfsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.817569, 0.315216, -4)
+item = ExtResource("12_qd5q6")
+amount = 1
+
+[node name="PickUpItem4" parent="Collectibles" instance=ExtResource("11_5lfsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00294, 0.315216, -4)
+item = ExtResource("12_qd5q6")
+amount = 1
+
+[node name="PickUpItem5" parent="Collectibles" instance=ExtResource("11_5lfsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30672, 0.315216, -4)
+item = ExtResource("12_qd5q6")
+amount = 1
+
+[node name="Box Inventory" parent="." instance=ExtResource("14_i5n2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40698, 0, -4.40824)
+inventory_name = "Box"
+recreate_slots_on_ready = false
+
+[node name="Box Inventory2" parent="." instance=ExtResource("14_i5n2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00742, 0, -4.40824)
+inventory_name = "Box"
+slots = Array[ExtResource("15_y5a8e")]([SubResource("Resource_2no4a")])
+recreate_slots_on_ready = false
+
+[connection signal="opened_inventory_ui" from="UI/Inventory System UI" to="Player" method="_on_inventory_system_ui_opened_inventory_ui"]

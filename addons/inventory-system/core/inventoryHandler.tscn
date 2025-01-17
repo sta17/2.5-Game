@@ -1,0 +1,207 @@
+[gd_scene load_steps=49 format=3 uid="uid://dpmygvk0mwapm"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_handler.gd" id="1_5gwgh"]
+[ext_resource type="Resource" uid="uid://dkdhkaaq6b1y5" path="res://Objects/ItemHandling/database.tres" id="2_ckk23"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory.gd" id="2_p0hf6"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/hotbar.gd" id="3_p8d6j"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/slot.gd" id="5_5tcay"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="6_0kyaq"]
+[ext_resource type="Resource" uid="uid://cjfoegl57ece7" path="res://Objects/ItemHandling/Item Category/MainHand.tres" id="6_u4wu0"]
+[ext_resource type="Resource" uid="uid://dhinqq0melrsh" path="res://Objects/ItemHandling/Item Category/weapons.tres" id="7_f1l0f"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/CategorizedSlot.gd" id="8_nrpgy"]
+[ext_resource type="Resource" uid="uid://drpbw1ydhbujt" path="res://Objects/ItemHandling/Item Category/OffHand.tres" id="9_qlftl"]
+[ext_resource type="Resource" uid="uid://cmspu8poxd67w" path="res://Objects/ItemHandling/Item Category/Shield.tres" id="10_2xusl"]
+[ext_resource type="Resource" uid="uid://b7hgmii8pvk3o" path="res://Objects/ItemHandling/Item Category/Boots.tres" id="11_vqfd0"]
+[ext_resource type="Resource" uid="uid://yndhpfi3yh12" path="res://Objects/ItemHandling/Item Category/Chest.tres" id="12_ekaai"]
+[ext_resource type="Resource" uid="uid://cag8woy01ixpr" path="res://Objects/ItemHandling/Item Category/Gloves.tres" id="13_6q4st"]
+[ext_resource type="Resource" uid="uid://yej5syrwx6r6" path="res://Objects/ItemHandling/Item Category/Helmet.tres" id="14_xea2b"]
+[ext_resource type="Resource" uid="uid://vuroxc2gjhyu" path="res://Objects/ItemHandling/Item Category/Pants.tres" id="15_qni84"]
+[ext_resource type="Resource" uid="uid://8nt86h4by03c" path="res://Objects/ItemHandling/Item Category/Trinket.tres" id="16_uijnh"]
+
+[sub_resource type="Resource" id="Resource_ildg2"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_ul772"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_fn467"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_a5766"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_ome7t"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_b6k0i"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_g6nv0"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_4kvdu"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_gx4sa"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_bgmqc"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_o3ace"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_8rpnw"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_wx8c5"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_8nycl"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_5sa2e"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_lsmxb"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_p3lk0"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_mr1va"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_ya2dm"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_t2asx"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_3ted1"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_tnwmi"]
+script = ExtResource("5_5tcay")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_du4s0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("6_u4wu0"), ExtResource("7_f1l0f")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_eyxh0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("10_2xusl"), ExtResource("9_qlftl")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_5vxg0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("11_vqfd0")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_a22e0"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("12_ekaai")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_ga6fh"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("13_6q4st")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_sw5yb"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("14_xea2b")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_unb11"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("15_qni84")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_6hlhv"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("16_uijnh")])
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_6h4ha"]
+script = ExtResource("8_nrpgy")
+accepted_categories = Array[ExtResource("6_0kyaq")]([ExtResource("16_uijnh")])
+amount = 0
+max_stack = -1
+
+[node name="InventoryHandler" type="Node"]
+script = ExtResource("1_5gwgh")
+database = ExtResource("2_ckk23")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_p0hf6")
+slots = Array[ExtResource("5_5tcay")]([SubResource("Resource_ildg2"), SubResource("Resource_ul772"), SubResource("Resource_fn467"), SubResource("Resource_a5766"), SubResource("Resource_ome7t"), SubResource("Resource_b6k0i"), SubResource("Resource_g6nv0"), SubResource("Resource_4kvdu"), SubResource("Resource_gx4sa"), SubResource("Resource_bgmqc"), SubResource("Resource_o3ace"), SubResource("Resource_8rpnw"), SubResource("Resource_wx8c5"), SubResource("Resource_8nycl"), SubResource("Resource_5sa2e"), SubResource("Resource_lsmxb"), SubResource("Resource_p3lk0"), SubResource("Resource_mr1va"), SubResource("Resource_ya2dm"), SubResource("Resource_t2asx"), SubResource("Resource_3ted1"), SubResource("Resource_tnwmi")])
+create_missing_slots = false
+database = ExtResource("2_ckk23")
+
+[node name="Equipment" type="Node" parent="."]
+script = ExtResource("2_p0hf6")
+slots = Array[ExtResource("5_5tcay")]([SubResource("Resource_du4s0"), SubResource("Resource_eyxh0"), SubResource("Resource_5vxg0"), SubResource("Resource_a22e0"), SubResource("Resource_ga6fh"), SubResource("Resource_sw5yb"), SubResource("Resource_unb11"), SubResource("Resource_6hlhv"), SubResource("Resource_6h4ha")])
+slot_amount = 9
+inventory_name = "Equipment"
+recreate_slots_on_ready = false
+create_missing_slots = false
+database = ExtResource("2_ckk23")
+
+[node name="Hotbar" type="Node" parent="." node_paths=PackedStringArray("inventory")]
+script = ExtResource("3_p8d6j")
+inventory = NodePath("../Inventory")
+database = ExtResource("2_ckk23")

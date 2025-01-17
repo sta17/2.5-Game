@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf5tp1dme0a5c"]
+
+[ext_resource type="Script" path="res://Objects/ItemHandling/pickUpItem.gd" id="1_h5ep4"]
+[ext_resource type="Texture2D" uid="uid://ddigy6xhm60yt" path="res://assets/images/Public Domain/Buch's RPG Items/Staff in Frame.png" id="2_tc5a7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3q2f3"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_taj3o"]
+radius = 0.6
+
+[sub_resource type="Animation" id="Animation_ium15"]
+resource_name = "Bob"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Geometry/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0), Vector3(0, 0.25, 0), Vector3(0, 0.5, 0), Vector3(0, 0.75, 0), Vector3(0, 0.5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sqskc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Geometry/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tp41g"]
+_data = {
+"Bob": SubResource("Animation_ium15"),
+"RESET": SubResource("Animation_sqskc")
+}
+
+[node name="PickUpItem" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_h5ep4")
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Geometry"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_tc5a7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("CylinderMesh_3q2f3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("CylinderShape3D_taj3o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tp41g")
+}
+autoplay = "Bob"

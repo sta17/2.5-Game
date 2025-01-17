@@ -1,0 +1,193 @@
+[gd_scene load_steps=40 format=3 uid="uid://dml1wfehophg4"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory.gd" id="1_803nw"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/boxInventory.gd" id="1_yi1c8"]
+[ext_resource type="Resource" uid="uid://dkdhkaaq6b1y5" path="res://Objects/ItemHandling/database.tres" id="2_uq3kd"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/slot.gd" id="3_r1dhj"]
+[ext_resource type="PackedScene" uid="uid://bo1qrj1q3020" path="res://assets/models/Kenney/Mixed/GLB/box-open.glb" id="3_x7iuo"]
+[ext_resource type="PackedScene" uid="uid://csh47j74uwr8t" path="res://assets/models/Kenney/Mixed/GLB/box.glb" id="4_308ma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wr6u4"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="Resource" id="Resource_pejba"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_fsq6v"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_sbs4e"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_lyy6d"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_v7c6t"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_lyuuh"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_gwllg"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_cjc3v"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_egevh"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_f4iwx"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_fa60i"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_3xqwx"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_gpcqk"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_1701u"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_vxhkf"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_liuge"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_olc5l"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_d0cqc"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_hqxms"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_qnv4c"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_46xmo"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_wr2sy"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_d2onk"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_lohex"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_itiqp"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_ew36b"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_8lrmf"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_m5g2x"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_yjrdw"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_l0b8r"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_6grd4"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[sub_resource type="Resource" id="Resource_yy37s"]
+script = ExtResource("3_r1dhj")
+amount = 0
+max_stack = -1
+
+[node name="Box Inventory" type="StaticBody3D"]
+script = ExtResource("1_yi1c8")
+slot_amount = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_wr6u4")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("1_803nw")
+slots = Array[ExtResource("3_r1dhj")]([SubResource("Resource_pejba"), SubResource("Resource_fsq6v"), SubResource("Resource_sbs4e"), SubResource("Resource_lyy6d"), SubResource("Resource_v7c6t"), SubResource("Resource_lyuuh"), SubResource("Resource_gwllg"), SubResource("Resource_cjc3v"), SubResource("Resource_egevh"), SubResource("Resource_f4iwx"), SubResource("Resource_fa60i"), SubResource("Resource_3xqwx"), SubResource("Resource_gpcqk"), SubResource("Resource_1701u"), SubResource("Resource_vxhkf"), SubResource("Resource_liuge"), SubResource("Resource_olc5l"), SubResource("Resource_d0cqc"), SubResource("Resource_hqxms"), SubResource("Resource_qnv4c"), SubResource("Resource_46xmo"), SubResource("Resource_wr2sy"), SubResource("Resource_d2onk"), SubResource("Resource_lohex"), SubResource("Resource_itiqp"), SubResource("Resource_ew36b"), SubResource("Resource_8lrmf"), SubResource("Resource_m5g2x"), SubResource("Resource_yjrdw"), SubResource("Resource_l0b8r"), SubResource("Resource_6grd4"), SubResource("Resource_yy37s")])
+slot_amount = 32
+inventory_name = "BoxInventory"
+database = ExtResource("2_uq3kd")
+
+[node name="boxOpen" parent="." instance=ExtResource("3_x7iuo")]
+visible = false
+
+[node name="box" parent="." instance=ExtResource("4_308ma")]
+
+[connection signal="closed" from="Inventory" to="." method="_on_inventory_closed"]

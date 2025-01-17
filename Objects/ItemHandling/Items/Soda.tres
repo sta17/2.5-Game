@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=6 format=3 uid="uid://yhv0270085uy"]
+
+[ext_resource type="Script" path="res://addons/inventory-system/core/item_category.gd" id="1_g5l6j"]
+[ext_resource type="Resource" uid="uid://nd13i8lq1uuj" path="res://Objects/ItemHandling/Item Category/Item Ranks/Misc.tres" id="3_10up2"]
+[ext_resource type="Script" path="res://addons/inventory-system/core/inventory_item.gd" id="3_k60tj"]
+[ext_resource type="Resource" uid="uid://klwoptfvmcpv" path="res://Objects/ItemHandling/Item Category/Consumables.tres" id="3_qad1q"]
+[ext_resource type="Texture2D" uid="uid://w3l0qwyfw1rx" path="res://assets/images/Public Domain/Buch's RPG Items/bottle 5.png" id="4_qmxsd"]
+
+[resource]
+script = ExtResource("3_k60tj")
+id = 0
+max_stack = 10
+name = "Soda Red"
+icon = ExtResource("4_qmxsd")
+lore = "Its Soda"
+rank = ExtResource("3_qad1q")
+properties = {}
+categories = Array[ExtResource("1_g5l6j")]([ExtResource("3_qad1q"), ExtResource("3_10up2")])
